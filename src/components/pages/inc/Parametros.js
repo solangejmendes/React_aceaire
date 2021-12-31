@@ -2,7 +2,6 @@ import React from 'react';
 import rustedPipe from '../../images/rustedPipe.jpg';
 import class0 from '../../images/class0.jpg';
 import filtration from '../../images/filtration.png';
-import { Link } from 'react-router-dom';
 
 export default function Parametros() {
     return (

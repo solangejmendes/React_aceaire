@@ -7,8 +7,7 @@ import {
   faInstagram,
   faLinkedinIn,
   faWhatsapp,
-  faSkype,
-  faEnvelope
+  faSkype
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from 'react-router-dom';
 
