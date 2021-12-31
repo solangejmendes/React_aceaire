@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+/* ***********Content styles**************** */ 
+p{
+    font-size: 14px;
+    color: #262626;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section{
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.main-heading{
+    color: rgb(204, 18, 18);
+    font-size: 26px;
+}
+
+.underline{
+    height: 04px;
+    width: 4rem;
+    background-color: #f76c2f;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bg-c-light{
+    background-color: #f2f2f2;
+}
+
+#imagencarda{
+    height: 100;
+    width: 100;
+}
+
+/* ***********Footer styles**************** */ 
+
+.footer a{
+    color: #fff;
+    text-decoration: none !Important;
+}
+
+.footer a:hover{
+    color: grey;
+}
+
+
+/* ***********SocialFollow styles**************** */ 
+
+.social-container {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none !Important;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: line;
+    position: sticky;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 1px;
+    padding: 0px 100px
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  a.social {
+    margin: 0 1rem;
+    transition: transform 250ms;
+    display: inline-block;
   }
-  to {
-    transform: rotate(360deg);
+  
+  a.social:hover {
+    transform: translateY(-2px);
   }
+  
+  a.youtube {
+    color: #eb3223;
+  }
+  
+  a.facebook {
+    color: #4968ad;
+  }
+  
+  a.twitter {
+    color: #49a1eb;
+  }
+  
+  a.instagram {
+    color: white;
+  }
+
+  a.linkedin {
+    color: #4968ad;
+  }
+
+  a.whatsapp {
+    color: green;
+  }
+
+  a.skype {
+    color: #4968ad;
+  }
+
+  a.web {
+    color: #4968ad;
+  }
+
+
+/* ***********Slider styles**************** */ 
+
+#carouselExampleIndicators {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+img{
+    border-radius: 8px;
+    padding: 5px;
 }
