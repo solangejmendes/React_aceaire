@@ -11,7 +11,11 @@ export default function Gracias() {
                             <h3 className="main-heading">Gracias</h3>
                             <div className="underline mx-auto"></div>
                             <p>Gracias por ponerse en contacto con nosotros. Analizaremos su solucitud y le contestaremos con la mayor brevidad posible.</p>
-                            <Link to="/home" className="btn btn-warning shadow">Volver</Link>
+                            <Link to="/">
+                                    <button className="btn btn-primary shadow">
+                                        Volver
+                                    </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

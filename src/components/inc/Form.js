@@ -1,44 +1,140 @@
-import React from 'react'
+import React from 'react';
+import { init } from '@emailjs/browser';
+import { send } from 'emailjs-com';
+import { useState } from 'react';
+import {
+   Link,
+   useNavigate
+} from "react-router-dom";
+
+
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+
 
 export default function Form() {
+
+    const navigate = useNavigate();
+
+    {/* --- SET INITIAL DATA FIELDS --- */}
+    const [toSend, setToSend] = useState({
+        from_name:'',
+        from_phone:'',
+        from_email:'',
+        from_message:'',
+        reply_to:'',
+        to_name:'',
+    });
+
+    {/* --- VALIDATE FORM FIELDS --- */}
+    const schema = Yup.object().shape({
+        from_name: Yup.string().required('Introduce el nombre.'),
+        from_phone: Yup.number().min(8).positive().integer().required('Introduce un numero de telefono valido.'),
+        from_email: Yup.string().email().required('Introduce un email valido.'),
+        from_message: Yup.string().required('Introduce un mensaje.'),
+    });
+
+    const{register,handleSubmit,formState: { errors }} = useForm({
+        resolver:yupResolver(schema),
+    });
+
+    const submitForm = (e) => {
+        e.preventDefault();
+        {/* --- DISPLAY VALIDATION ERRORS --- */}
+        console.log(e);
+        {/* --- METHOD TO SEND THE EMAIL --- */}
+        send(
+            'service_iwzpjtq',
+            'template_safus0a',
+            toSend,
+            'user_qN1EDLF3yczpYrH5HSbtE'
+        )
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                navigate('/gracias');
+            })
+            .catch((err) => {
+                console.log('FAILED...', err);
+            });
+    };
+
+    const handleChange = (e) => {
+        setToSend({ ...toSend, [e.target.name]: e.target.value});
+    };
+
+
     return (
         <div>
-            
-<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="form1-89" style="background-color: rgb(239, 239, 239);">
-    
-    <div id="contact" class="mbr-section__container mbr-section__container--std-padding container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2" data-form-type="formoid">
-                        <div id="contact" class="mbr-header mbr-header--center mbr-header--std-padding">
-                            <h2 class="mbr-header__text">FORMULÁRIO DE CONTACTO</h2>
-                        </div>
-                        
-                        <div data-form-alert="true"></div>
-                        <form action="https://formsubmit.co/7cc10e376f1a3950f0181888cd9849c5" method="post" data-form-title="CONTACT FORM">
-                            <input type="hidden" value="" data-form-email="true">
-                            <div class="form-group">
-                                <input type="text" class="form-control name" name="name" required="" placeholder="Nombre*" data-form-field="Name">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control email" name="email" required="" placeholder="Email*" data-form-field="Email">
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" class="form-control phone" name="phone" placeholder="Telefono" data-form-field="Phone">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control message" name="message" placeholder="Mensaje" rows="7" data-form-field="Message"></textarea>
-                            </div>
-                            <div class="mbr-buttons mbr-buttons--right"><button type="submit" class="mbr-buttons__btn btn btn-lg btn-warning">CONTÁCTANOS</button></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
+            <form onSubmit={handleSubmit, submitForm} data-form-title="CONTACT FORM">
+                <div className="form-group">
+                    <label className="mb-1">Nombre</label>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        name="from_name" 
+                        required
+                        placeholder="Nombre*" 
+                        data-form-field="Name" 
+                        {...register("from_name")} 
+                        value={toSend.from_name}
+                        onChange={handleChange}
+                    />
+                    <p>{errors.from_name?.message}</p>
+                </div>
+                <div className="form-group">
+                    <label className="mb-1">Telefono</label>
+                    <input 
+                        type="tel" 
+                        className="form-control phone" 
+                        name="from_phone" 
+                        required                        
+                        placeholder="Telefono" 
+                        data-form-field="Phone" 
+                        {...register("from_phone")}
+                        value={toSend.from_phone}
+                        onChange={handleChange}
+                    />
+                    <p>{errors.from_phone?.message}</p>
+                </div>
+                <div className="form-group">
+                    <label className="mb-1">Correo electronico</label>
+                    <input 
+                        type="email" 
+                        className="form-control email" 
+                        name="from_email" 
+                        required
+                        placeholder="Email*" 
+                        data-form-field="Email" 
+                        {...register("from_email")}
+                        value={toSend.from_email}
+                        onChange={handleChange}
+                    />
+                    <p>{errors.from_email?.message}</p>
+                </div>
+                <div className="form-group">
+                    <label className="mb-1">Mensaje</label>
+                    <textarea 
+                        className="form-control message" 
+                        name="from_message" 
+                        required
+                        placeholder="Escribe aquí el mensaje ..." 
+                        rows="7" 
+                        data-form-field="Message"
+                        {...register("from_message")}
+                        value={toSend.from_message}
+                        onChange={handleChange}
+                    >
+                    </textarea>
+                    <p>{errors.from_message?.message}</p>
+                </div>
+                <div className="form-group py-3">
+                    <button className="btn btn-primary shadow w-100">
+                        Enviar Mensaje
+                    </button>
+                </div>
+            </form>
         </div>
     )
 }

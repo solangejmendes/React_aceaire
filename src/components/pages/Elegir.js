@@ -1,5 +1,5 @@
 import React from 'react';
-import auditoria from '../images/auditoria.png';
+import VFDChart from '../images/VFDChart.png';
 
 export default function Elegir() {
     return (
@@ -11,7 +11,6 @@ export default function Elegir() {
                             <p>
                                 En la industria, el aire comprimido se usa tan ampliamente que a menudo se lo considera la cuarta utilidad, después de la electricidad, el gas natural y el agua. 
                             </p>
-                            <br />
                             <p>    
                                 Con el tiempo, los fabricantes han invertido en tecnología para superar las ineficiencias de los compresores de aire y simplificar la experiencia del usuario. Sin embargo, el aire comprimido sigue siendo más caro que los otros tres servicios cuando se evalúa por unidad de energía suministrada. 
                             </p>
@@ -28,39 +27,20 @@ export default function Elegir() {
                     <div className="row">
                         <div className="col-md-12 text-center">
                             <h3 className="main-heading">
-                                ¿Cómo puede garantizar un sistema de aire comprimido eficiente en su planta? 
+                                Tamaño del compresor
                             </h3>
                             <div className="underline mx-auto"></div>
                         </div>
                         <div className="col-md-12 left">
                             <p>
-                                Realizar una auditoría de aire comprimido de su sistema es el primer paso para determinar los problemas que podrían obstaculizar la eficiencia de su unidad y aumentar innecesariamente los costos de energía. Hay varios niveles de auditorías de aire comprimido que se pueden realizar: 
+                                Este es un ejemplo más de que más grande no significa mejor cuando se trata de compresores de aire. Un compresor de tornillo rotativo es más eficiente cuando funciona con una carga del 100%. Cargado, significa que el compresor está produciendo aire; mientras está descargado significa que el compresor permanece inactivo. Por lo tanto, un compresor se cargará continuamente cuando su capacidad de producción de aire coincida con los requisitos de aire. 
                             </p>
-                            <ul>
-                                <li>Evaluación cualitativa del sistema:
-                                    <p>
-                                        Este proceso generalmente lleva ½ a 2 días e incluye un análisis general del sistema de aire comprimido de la planta (sea una pequeña instalación con un compresor o una gran instalación formada por varias salas de compresores), incluido un análisis del sistema de distribución para verificar si hay fugas, caídas de presión y problemas de dimensión del compresor. Se trazará un mapa del sistema de aire comprimido y se propondrá las medidas que llevarán a un mayor ahorro energético. 
-                                    </p>
-                                </li>
-                                <li>Evaluación cuantitativa del sistema:
-                                    <p>
-                                        Para una revisión más completa, se encuentra disponible una evaluación del sistema que incluye un recorrido, así como lecturas recopiladas para identificar la dinámica del sistema. El mapeo del sistema de aire comprimido incluirá perfiles de presión y demanda. Las conclusiones del informe y las soluciones propuestas se proporcionarán al final de la evaluación. 
-                                    </p>
-                                </li>
-                                <li>Auditoría completa del sistema:
-                                    <p>
-                                        La auditoría del sistema es la revisión más completa y toma alrededor de 3 a 10 días con poco o ningún impacto en los procedimientos de ejecución actuales. Las auditorías completas del sistema de aire comprimido incluyen: 
-                                    </p>
-                                    <ul>
-                                        <li>Registro de datos de uso de energía: registra la energía que consumen los compresores de aire. </li>
-                                        <li>Medición de aire: identifica la verdadera demanda de aire comprimido y el programa operativo de una fábrica. </li>
-                                        <li>Detección y control de fugas de aire: identifica la cantidad de aire que se pierde debido a las fugas. </li>
-                                        <li>Calidad del aire: mide la cantidad de partículas en el sistema de aire, como agua y aceite. </li>
-                                        <li>Revisión de mantenimiento: evalúa la eficacia del plan de mantenimiento actual.</li>
-                                        <li>Programa de seguimiento y control: hace recomendaciones para mantener una eficiencia óptima. </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <p>
+                                Por ejemplo, si un compresor produce 15m3/min pero el requerimiento de aire es sólo 9 m3/min, entonces el compresor estará en condición de descarga durante una parte significativa del tiempo. Los compresores de tornillo son ineficientes en la condición de descarga y, por lo tanto, un compresor más grande utilizará más energía y consumibles que un compresor del tamaño adecuado para un requerimiento de aire dado. 
+                            </p>
+                            <p>
+                                Como regla general, un compresor que solo está funcionando al 50% de su capacidad consumirá un 20% o más de energía que un compresor que esté funcionando a su máxima capacidad o cerca de ella. 
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -71,17 +51,70 @@ export default function Elegir() {
                     <div className="row">
                         <div className="col-md-12 text-center">
                             <h3 className="main-heading">
-                                Beneficios de una auditoría de aire  
+                                Demandas de aire fluctuantes
                             </h3>
                             <div className="underline mx-auto"></div>
                         </div>
-                        <div className="col-md-12 text-center">
+                        <div className="col-md-12 left">
                             <p>
-                                Los fabricantes que utilizan aire comprimido independientemente de la industria (alimentación, bebidas, automoción, textil, energía, electrónica, plásticos, etc.), a menudo se darán cuenta que una auditoría de aire comprimido se amortiza sola. 
+                                Determinar el tamaño correcto puede ser suficiente para mejorar la eficiencia energética, pero ¿qué pasa con aquellos clientes que tienen patrones de demanda variables durante el día o aquellos clientes que anticipan un aumento en la capacidad de fabricación que requiere más aire? Los compresores con variador de frecuencia (VFD) brindan soluciones para ambas situaciones. 
                             </p>
-                            <img src={auditoria} className="w-50 border-bottom" alt="auditorias" />
-                            <p>    
-                                Dependiendo de los resultados de la auditoría, los fabricantes pueden esperar ver mejoras en la eficiencia energética y la fiabilidad del sistema y menores costos operativos.
+                            <p>
+                                Un VFD funciona reduciendo la velocidad de rotación del motor y consecuentemente del tornillo del compresor para que el fluxo de aire producido coincida con la demanda de aire real del cliente. Al reducir la velocidad del motor, el compresor consume menos energía que un compresor de velocidad fija en comparación con el control de modulación de entrada o carga / sin carga. 
+                            </p>
+                        </div>
+                        <div className="col-md-12 text-center">
+                            <img src={VFDChart} className="w-75 border-bottom" alt="vfd" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="section bg-c-light border-top">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12 text-center">
+                            <h3 className="main-heading">
+                                Sistema de distribución de aire
+                            </h3>
+                            <div className="underline mx-auto"></div>
+                        </div>
+                        <div className="col-md-12 left">
+                            <p>
+                                Cuando se busca mejorar la eficiencia energética, se debe mirar más allá del compresor de aire y evaluar el sistema de aire comprimido en su conjunto. El área más importante de mejora podría ser el sistema de distribución de la instalación: cómo se transporta y utiliza el aire comprimido en la aplicación final. Tanto el diseño de la distribución como el material utilizado para las tuberías afectan la eficiencia energética. 
+                            </p>
+                            <p>
+                                Al diseñar un sistema de tuberías de aire comprimido, cuanto más corta sea la distancia entre el compresor y la aplicación, mejor. Minimizar las curvas en el camino a la aplicación reduce las caídas de presión y mejora la eficiencia del sistema. 
+                            </p>
+                            <p>
+                                La elección del material para el sistema de distribución es igualmente importante. El plástico, el aluminio y el acero son los materiales más comunes para las tuberías de aire comprimido. Mientras que el acero es más accesible que el aluminio, el aluminio ofrece menor peso y resistencia a la corrosión. El aire comprimido contiene aceite y agua, lo que puede causar corrosión en la línea y, a su vez, provoca caídas de presión y afecta la eficiencia. 
+                            </p>
+                            <p>
+                                Además, las líneas de aire comprimido son dinámicas porque vibran constantemente debido al paso del aire comprimido. Con el tiempo, estos movimientos debilitan las articulaciones y pueden provocar fugas. Las fugas encontradas en el sistema de compresores de aire de una instalación pueden desperdiciar hasta el 25% del costo del aire comprimido, lo que representa miles de euros en electricidad al año. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="section border-top">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12 text-center">
+                            <h3 className="main-heading">
+                                Mantenimiento
+                            </h3>
+                            <div className="underline mx-auto"></div>
+                        </div>
+                        <div className="col-md-12 left">
+                            <p>
+                                Para evitar fallas, se debe seguir el mantenimiento preventivo. 
+                            </p>
+                            <p>
+                                El costo de mantenimiento no es el más importante, pero un servicio al cliente no expedito puede detener su línea de producción por un tiempo considerable y costarle miles o millones de euros de pérdidas por falta de producción (línea de producción parada). 
+                            </p>
+                            <p>
+                                Los sistemas de aire comprimido son responsables de una gran parte del consumo de energía en la industria, además de jugar un papel crítico en el desempeño de las líneas de producción. Por eso, ante la duda sobre qué compresor comprar, no basta con considerar únicamente especificaciones técnicas: es necesario buscar proveedores confiables, capaces de ofrecer el soporte que su operación necesita.
                             </p>
                         </div>
                     </div>

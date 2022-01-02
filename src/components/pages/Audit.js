@@ -34,20 +34,17 @@ export default function Audit() {
                                 Realizar una auditoría de aire comprimido de su sistema es el primer paso para determinar los problemas que podrían obstaculizar la eficiencia de su unidad y aumentar innecesariamente los costos de energía. Hay varios niveles de auditorías de aire comprimido que se pueden realizar: 
                             </p>
                             <ul>
-                                <li>Evaluación cualitativa del sistema:
-                                    <p>
-                                        Este proceso generalmente lleva ½ a 2 días e incluye un análisis general del sistema de aire comprimido de la planta (sea una pequeña instalación con un compresor o una gran instalación formada por varias salas de compresores), incluido un análisis del sistema de distribución para verificar si hay fugas, caídas de presión y problemas de dimensión del compresor. Se trazará un mapa del sistema de aire comprimido y se propondrá las medidas que llevarán a un mayor ahorro energético. 
-                                    </p>
+                                <li>
+                                    <i>Evaluación cualitativa del sistema: </i>
+                                    Este proceso generalmente lleva ½ a 2 días e incluye un análisis general del sistema de aire comprimido de la planta (sea una pequeña instalación con un compresor o una gran instalación formada por varias salas de compresores), incluido un análisis del sistema de distribución para verificar si hay fugas, caídas de presión y problemas de dimensión del compresor. Se trazará un mapa del sistema de aire comprimido y se propondrá las medidas que llevarán a un mayor ahorro energético. 
                                 </li>
-                                <li>Evaluación cuantitativa del sistema:
-                                    <p>
-                                        Para una revisión más completa, se encuentra disponible una evaluación del sistema que incluye un recorrido, así como lecturas recopiladas para identificar la dinámica del sistema. El mapeo del sistema de aire comprimido incluirá perfiles de presión y demanda. Las conclusiones del informe y las soluciones propuestas se proporcionarán al final de la evaluación. 
-                                    </p>
+                                <li>
+                                    <i>Evaluación cuantitativa del sistema: </i>
+                                    Para una revisión más completa, se encuentra disponible una evaluación del sistema que incluye un recorrido, así como lecturas recopiladas para identificar la dinámica del sistema. El mapeo del sistema de aire comprimido incluirá perfiles de presión y demanda. Las conclusiones del informe y las soluciones propuestas se proporcionarán al final de la evaluación. 
                                 </li>
-                                <li>Auditoría completa del sistema:
-                                    <p>
-                                        La auditoría del sistema es la revisión más completa y toma alrededor de 3 a 10 días con poco o ningún impacto en los procedimientos de ejecución actuales. Las auditorías completas del sistema de aire comprimido incluyen: 
-                                    </p>
+                                <li>
+                                    <i>Auditoría completa del sistema: </i>
+                                    La auditoría del sistema es la revisión más completa y toma alrededor de 3 a 10 días con poco o ningún impacto en los procedimientos de ejecución actuales. Las auditorías completas del sistema de aire comprimido incluyen: 
                                     <ul>
                                         <li>Registro de datos de uso de energía: registra la energía que consumen los compresores de aire. </li>
                                         <li>Medición de aire: identifica la verdadera demanda de aire comprimido y el programa operativo de una fábrica. </li>
