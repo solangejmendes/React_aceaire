@@ -36,12 +36,12 @@ export default function Contact() {
                                     <div>
                                         <p className="text-center">
                                             Telf: 
-                                            <a href="https://api.whatsapp.com/send?phone=648808368&text=Gracias%20por%20contactar%20a%20ACE%20-%20Aire%20Comprimido%20Eficiente.%20%C2%BFEn%20que%20te%20puedo%20ayudar?" target="_blank"> +34 648 808 368</a>
-                                            <a href="https://api.whatsapp.com/send?phone=648808368&text=Gracias%20por%20contactar%20a%20ACE%20-%20Aire%20Comprimido%20Eficiente.%20%C2%BFEn%20que%20te%20puedo%20ayudar?" target="_blank" className="whatsapp social">
+                                            <a href="https://api.whatsapp.com/send?phone=648808368&text=Gracias%20por%20contactar%20a%20ACE%20-%20Aire%20Comprimido%20Eficiente.%20%C2%BFEn%20que%20te%20puedo%20ayudar?"> +34 648 808 368</a>
+                                            <a href="https://api.whatsapp.com/send?phone=648808368&text=Gracias%20por%20contactar%20a%20ACE%20-%20Aire%20Comprimido%20Eficiente.%20%C2%BFEn%20que%20te%20puedo%20ayudar?" className="whatsapp social">
                                                 <FontAwesomeIcon icon={faWhatsapp} size="1x" />
                                             </a>
                                             | email: 
-                                            <a href="#"> info@ACE-Aire.com</a>
+                                            <a href="#bottom"> info@ACE-Aire.com</a>
                                         </p>
                                     </div>
                                 </div>
