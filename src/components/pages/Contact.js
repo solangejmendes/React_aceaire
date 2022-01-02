@@ -29,7 +29,9 @@ export default function Contact() {
                                             height="450" 
                                             style={{ border: 0 }}
                                             allowFullScreen="" 
-                                            loading="lazy">
+                                            loading="lazy"
+                                            title="Map"
+                                            >
                                         </iframe>
                                     </div>
                                     <hr />

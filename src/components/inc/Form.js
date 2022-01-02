@@ -13,7 +13,7 @@ export default function Form() {
 
     const navigate = useNavigate();
 
-    {/* --- SET INITIAL DATA FIELDS --- */}
+    /* --- SET INITIAL DATA FIELDS --- */
     const [toSend, setToSend] = useState({
         from_name:'',
         from_phone:'',
@@ -23,7 +23,7 @@ export default function Form() {
         to_name:'',
     });
 
-    {/* --- VALIDATE FORM FIELDS --- */}
+    /* --- VALIDATE FORM FIELDS --- */
     const schema = Yup.object().shape({
         from_name: Yup.string().required('Introduce el nombre.'),
         from_phone: Yup.number().min(8).positive().integer().required('Introduce un numero de telefono valido.'),
@@ -37,9 +37,9 @@ export default function Form() {
 
     const submitForm = (e) => {
         e.preventDefault();
-        {/* --- DISPLAY VALIDATION ERRORS --- */}
+        /* --- DISPLAY VALIDATION ERRORS --- */
         console.log(e);
-        {/* --- METHOD TO SEND THE EMAIL --- */}
+        /* --- METHOD TO SEND THE EMAIL --- */
         send(
             'service_iwzpjtq',
             'template_safus0a',
@@ -63,7 +63,10 @@ export default function Form() {
     return (
         <div>
 
-            <form onSubmit={handleSubmit, submitForm} data-form-title="CONTACT FORM">
+            <form onSubmit={() => {
+                handleSubmit();
+                submitForm();
+                }} data-form-title="CONTACT FORM">
                 <div className="form-group">
                     <label className="mb-1">Nombre</label>
                     <input 
