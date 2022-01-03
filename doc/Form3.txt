@@ -1,0 +1,134 @@
+import React from 'react';
+import { useField, Form, FormikProps, Formik } from 'formik';
+import * as Yup from 'yup';
+
+
+export default function Form3() {
+
+    const CustomTextInput = ({ label, ...props }) => {
+        const [field, meta] = useField(props);
+        return (
+            <>
+                <label htmlFor={props.id || props.name}>{label}</label>
+                <input className="text-input" {...field} {...props} />
+                {meta.touched && meta.error ? (
+                <div className="error">{meta.error}</div>
+                ) : null}
+            </>
+        )
+    }
+
+    const CustomCheckbox = ({ children, ...props }) => {
+        const [field, meta] = useField(props, 'checkbox');
+        return (
+            <>
+                <label className="checkbox">
+                    <input type="checkbox" {...field} {...props} />
+                    {children}
+                </label>
+                {meta.touched && meta.error ? (
+                    <div className="error">{meta.error}</div>
+                ) : null}
+            </>
+        )
+    }
+ 
+    const CustomSelect = ({ label, ...props }) => {
+        const [field, meta] = useField(props);
+        return (
+            <>
+                <label htmlFor={props.id || props.name}>{label}</label>
+                <select {...field} {...props} />
+                {meta.touched && meta.error ? (
+                    <div className="error">{meta.error}</div>
+                ) : null}
+            </>
+        )
+    }
+
+    /* --- SET INITIAL DATA FIELDS --- */
+    const initialValues = ({
+        name:'',
+        email:'',
+        acceptanceTerms: false,
+        specialPower:'',
+    });
+
+    
+    // YUP Validation
+    const validationSchema=Yup.object({
+	    name: Yup.string()
+		    .min(5, 'Must be at least 5 characters.')
+            .max(15, 'Must be 15 characters or less.')
+            .required('Required'),
+	    email: Yup.string()
+            .email('Invalid email address')
+		    .required('* Email field is required'),
+	    acceptanceTerms: Yup.boolean()
+            .required('* Required')
+            .oneOf([true], 'You must accept the terms and conditions.'),
+	    specialPower: Yup.string()
+            .required('* Required')
+            .oneOf(['flight', 'invisibility', 'wealthhy bat guy', 'other'], 'Invalid special power.'),
+	});
+
+    
+   const onSubmit=(values, { setSubmitting, resetForm }) => {
+        setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            resetForm();
+            setSubmitting(false);
+        }, 5000)
+    } 
+    
+    
+    return (
+        <div>
+            <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={onSubmit}
+            >
+              {props => (
+                <Form>
+                    <h1>Sign Up</h1>
+                    <CustomTextInput 
+                        label="Name"
+                        name="name"
+                        type="text"
+                        placeholder="Your Name"
+                    />
+                    <CustomTextInput 
+                        label="Name"
+                        name="email"
+                        type="email"
+                        placeholder="Your email"
+                    />
+                    <CustomSelect 
+                        label="Special Power"
+                        name="specialPowwer"
+                    >
+                        <option value="">Select a Special Power</option>
+                        <option value="flight">flight</option>
+                        <option value="invisibility">invisibility</option>
+                        <option value="wealthhy bat guy">wealthhy bat guy</option>
+                        <option value="other">other</option>
+                    </CustomSelect>
+
+                    <CustomCheckbox 
+                        name="acceptTerms"
+                    >
+                        I accept the terms and conditions
+                    </CustomCheckbox>
+
+                    <button type="submit">
+                        {props.isSubmitting ? 'Loading...' : 'submit'}
+                    </button>
+                </Form>
+              )}
+            </Formik>
+        </div>
+    )
+}
+
+

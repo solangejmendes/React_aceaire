@@ -1,0 +1,173 @@
+import React, { useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import * as emailjs from 'emailjs-com';
+import { useNavigate } from "react-router-dom";
+
+export const Form2 = () => {
+  
+  const [buttonState, setButtonState] = useState('Enviar Mensaje');
+  
+  const navigate = useNavigate(); 
+
+  const setSubmitting = true
+  
+  const formik = useFormik({
+
+	/*created  initailValues object in a format EmailJS accepts*/
+    initialValues: {
+	    from_name:'', //user name
+        from_phone:'', // user phone
+        from_email:'', // user email
+        from_message:'', // user message
+        reply_to:'',
+        to_name: 'info@ACE-aire.com', //email id of the admin
+    },
+
+    
+    /* --- VALIDATE FORM FIELDS --- */
+	validationSchema: Yup.object({
+	   from_name: Yup.string()
+		.required('* Name field is required'),
+	   from_phone: Yup.number().min(8).positive().integer()
+		.required('* Introduce un numero de telefono valido.'),
+	   from_email: Yup.string().email('Invalid email address')
+		.required('* Email field is required'),
+	   from_message: Yup.string().required('* Message field is required')
+	}),
+
+    /*handleChange: (e) => {
+        setButtonState({ ...buttonState, [e.target.name]: e.target.value});
+    },*/
+
+	handleSubmit: (values) => {
+	   try{
+		/* --- METHOD TO SEND THE EMAIL --- */
+        emailjs.send(
+            'service_iwzpjtq', 
+            'template_safus0a', 
+            values, 
+            'user_qN1EDLF3yczpYrH5HSbtE'
+        )
+		  .then(() => {
+		     sentMessage.classList.add('success');
+		     sentMessage.innerHTML = CONTACT_ERROR.success;
+		     setButtonState('Send Email');
+		     setSubmitting(false);
+		     resetForm();
+             navigate('/gracias');
+	          });
+	   }
+	   catch {
+	      sentMessage.classList.add('error');
+	      sentMessage.innerHTML = CONTACT_ERROR.error;
+	      setButtonState('Send Email');
+	      setSubmitting(false);
+	  }
+     },
+  });
+
+
+  return(
+    <form  className="formcontact" onSubmit={formik.handleSubmit}>
+	  <div  className="row contactform">
+
+	    <div  className="form-group">
+            <div className="mb-1">
+		        <label  htmlFor="from_name">Nombre</label>
+		        <input
+		            id="from_name"
+                    className="form-control" 
+                    name="from_name"
+		            type="text"
+		            autoComplete="off"
+		            placeholder="Nombre*"
+                    data-form-field="Name" 
+		            value={formik.values.from_name}
+                    onChange={formik.handleChange}
+	            />
+		        <div className={`expandable ${formik.touched.from_name && formik.errors.from_name ? 'show' : ''}`}>
+                    {formik.errors.from_name}
+                </div>
+            </div>
+	    </div>
+
+	    <div  className="form-group">
+            <div className="mb-1">
+		        <label  htmlFor="from_name">Nombre</label>
+		        <input
+		            id="from_name"
+                    className="form-control phone" 
+                    name="from_phone"
+		            type="tel"
+		            autoComplete="off"
+		            placeholder="Telefono*"
+                    data-form-field="Phone" 
+		            value={formik.values.from_phone}
+                    onChange={formik.handleChange}
+	            />
+		        <div className={`expandable ${formik.touched.from_phone && formik.errors.from_phone ? 'show' : ''}`}>
+                    {formik.errors.from_phone}
+                </div>
+            </div>
+	    </div>
+
+	    <div  className="form-group">
+            <div className="mb-1">
+		        <label  htmlFor="from_name">Correo electronico</label>
+		        <input
+		            id="from_name"
+                    className="form-control email" 
+                    name="from_email"
+		            type="email"
+		            autoComplete="off"
+		            placeholder="Email*"
+                    data-form-field="Email" 
+		            value={formik.values.from_email}
+                    onChange={formik.handleChange}
+	            />
+		        <div className={`expandable ${formik.touched.from_email && formik.errors.from_email ? 'show' : ''}`}>
+                    {formik.errors.from_email}
+                </div>
+            </div>
+	    </div>
+
+	    <div  className="form-group">
+            <div className="mb-1">
+		        <label  htmlFor="from_name">Nombre</label>
+		        <textarea
+		            id="from_name"
+                    className="form-control message" 
+                    name="from_message"
+		            type="text"
+		            autoComplete="off"
+                    rows="7" 
+		            placeholder="Escribe aquí el mensaje ..."
+                    data-form-field="Message" 
+		            value={formik.values.from_message}
+                    onChange={formik.handleChange}
+	            />
+		        <div className={`expandable ${formik.touched.from_message && formik.errors.from_message ? 'show' : ''}`}>
+                    {formik.errors.from_message}
+                </div>
+            </div>
+	    </div>
+
+	    <div className="form-group py-3">
+            <button 
+                disabled={formik.isSubmitting} 
+                type="submit" 
+                className="btn btn-primary shadow w-100"
+            >
+                <span>{buttonState}</span>
+            </button>
+        </div>
+
+	    <div  className="col-12 form-message">
+		    <span id='output'  className="output_message text-center text-uppercase" />
+	    </div>
+
+	  </div>
+    </form>
+  );
+};

@@ -24,16 +24,20 @@ export default function Form() {
     });
 
     /* --- VALIDATE FORM FIELDS --- */
-    const schema = Yup.object().shape({
+    const validationschema = Yup.object().shape({
         from_name: Yup.string().required('Introduce el nombre.'),
         from_phone: Yup.number().min(8).positive().integer().required('Introduce un numero de telefono valido.'),
         from_email: Yup.string().email().required('Introduce un email valido.'),
         from_message: Yup.string().required('Introduce un mensaje.'),
     });
 
-    const{register,handleSubmit,formState: { errors }} = useForm({
-        resolver:yupResolver(schema),
+    const {register,formState: { errors }} = useForm({
+        resolver:yupResolver(validationschema),
     });
+
+    const handleChange = (e) => {
+        setToSend({ ...toSend, [e.target.name]: e.target.value});
+    };
 
     const submitForm = (e) => {
         e.preventDefault();
@@ -55,18 +59,17 @@ export default function Form() {
             });
     };
 
-    const handleChange = (e) => {
-        setToSend({ ...toSend, [e.target.name]: e.target.value});
-    };
+
 
 
     return (
         <div>
 
-            <form onSubmit={() => {
-                handleSubmit();
-                submitForm();
-                }} data-form-title="CONTACT FORM">
+            <form 
+                validationschema={validationschema}
+                onSubmit={submitForm} 
+                data-form-title="CONTACT FORM"
+            >
                 <div className="form-group">
                     <label className="mb-1">Nombre</label>
                     <input 
@@ -129,7 +132,7 @@ export default function Form() {
                     <p>{errors.from_message?.message}</p>
                 </div>
                 <div className="form-group py-3">
-                    <button className="btn btn-primary shadow w-100">
+                    <button type="submit" className="btn btn-primary shadow w-100">
                         Enviar Mensaje
                     </button>
                 </div>
