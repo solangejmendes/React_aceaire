@@ -46,8 +46,8 @@ export default function Footer() {
                             <div>
                                 <p className="text-white mb-1">
                                     Telf: 
-                                    <a href="https://api.whatsapp.com/send?phone=648808368&text=Gracias%20por%20contactar%20a%20ACE%20-%20Aire%20Comprimido%20Eficiente.%20%C2%BFEn%20que%20te%20puedo%20ayudar?" className="text-white mb-1"> +34 648 808 368</a>
-                                    <a href="https://api.whatsapp.com/send?phone=648808368&text=Gracias%20por%20contactar%20a%20ACE%20-%20Aire%20Comprimido%20Eficiente.%20%C2%BFEn%20que%20te%20puedo%20ayudar?" className="whatsapp social">
+                                    <a href="https://api.whatsapp.com/send?phone=34648808368&text=Gracias%20por%20contactar%20a%20ACE%20-%20Aire%20Comprimido%20Eficiente.%20%C2%BFEn%20que%20te%20puedo%20ayudar?" className="text-white mb-1" target="_blank"> +34 648 808 368</a>
+                                    <a href="https://api.whatsapp.com/send?phone=34648808368&text=Gracias%20por%20contactar%20a%20ACE%20-%20Aire%20Comprimido%20Eficiente.%20%C2%BFEn%20que%20te%20puedo%20ayudar?" className="whatsapp social" target="_blank">
                                         <FontAwesomeIcon icon={faWhatsapp} size="1x" />
                                     </a>
                                 </p>
@@ -67,7 +67,7 @@ export default function Footer() {
                             <div className="col-md-12">
                                 <p className="text-white text-center">
                                     Designed by:  
-                                    <a href="http://www.appsleanit.com/" className="web social">AppsLeanIT</a>
+                                    <a href="http://www.appsleanit.com/" className="web social" target="_blank">AppsLeanIT</a>
                                     in 2022
                                 </p>                
                             </div>
