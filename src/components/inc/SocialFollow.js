@@ -21,6 +21,7 @@ export default function SocialFlow() {
                     className="linkedin social"
                     href="https://www.linkedin.com/company/aceaire"
                     target="_blank"
+                    rel="noopener noreferrer"
                     >
                     <FontAwesomeIcon icon={faLinkedinIn} size="2x" />
                 </a>
@@ -34,6 +35,7 @@ export default function SocialFlow() {
                     className="facebook social"
                     href="https://www.facebook.com/ACE-Aire-Comprimido-Eficiente-103723305063187"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <FontAwesomeIcon icon={faFacebook} size="2x" />
                 </a>
@@ -53,6 +55,7 @@ export default function SocialFlow() {
                     className="whatsapp social"
                     href="https://api.whatsapp.com/send?phone=34648808368&text=Gracias%20por%20contactar%20a%20ACE%20-%20Aire%20Comprimido%20Eficiente.%20%C2%BFEn%20que%20te%20puedo%20ayudar?"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <FontAwesomeIcon icon={faWhatsapp} size="2x" />
                 </a>
