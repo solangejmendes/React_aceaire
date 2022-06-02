@@ -45,11 +45,12 @@ export default function Form() {
         console.log(e);
         /* --- METHOD TO SEND THE EMAIL --- */
         send(
-            'service_iwzpjtq',
-            'template_safus0a',
+            'service_nz5me3p',
+            'template_dwqp8ml',
             toSend,
-            'user_qN1EDLF3yczpYrH5HSbtE'
+            'YVUu0maHv4Z6qOyhQ'
         )
+
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
                 navigate('/gracias');
